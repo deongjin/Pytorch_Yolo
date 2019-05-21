@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67e5cd3c-815e-4025-85e4-19d232dfec2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cam_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cfg/tiny-yolo-voc.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cfg/yolo-voc.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cfg/yolo.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voc.names" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/det_messi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detect.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dog-cycle-car.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/dog.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/eagle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/giraffe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/herd_of_horses.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/img4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/messi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/person.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/scream.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_demo_half.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cam_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/cam_detection.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cam_detection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3096">
-              <caret line="172" column="23" lean-forward="true" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+            <state relative-caret-position="-2095">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -69,13 +47,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cam_demo.py" />
+        <option value="$PROJECT_DIR$/cam_detection.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="616" />
-    <option name="width" value="1310" />
-    <option name="height" value="1040" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="1623" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -220,15 +199,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-6" y="0" width="1298" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17755775" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21298495" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3056338" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35470086" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -243,23 +222,8 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/detect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2153">
-          <caret line="186" column="27" lean-forward="true" selection-start-line="186" selection-start-column="27" selection-end-line="186" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/video_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/detect.py" />
+    <entry file="file://$PROJECT_DIR$/video_demo.py" />
     <entry file="file://$PROJECT_DIR$/data/coco.names">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-918" />
@@ -276,23 +240,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/video_demo_half.py" />
     <entry file="file://$PROJECT_DIR$/preprocess.py" />
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cam_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/cam_demo.py" />
+    <entry file="file://$PROJECT_DIR$/../__init__.py" />
     <entry file="file://$PROJECT_DIR$/cam_detection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3096">
-          <caret line="172" column="23" lean-forward="true" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+        <state relative-caret-position="-2095">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

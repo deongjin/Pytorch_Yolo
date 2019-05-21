@@ -75,6 +75,7 @@ def arg_parse():
 
 
 if __name__ == '__main__':
+    ####
     dog_exist = 0
     cfgfile = "cfg/yolov3.cfg"                      #config파일 선언
     weightsfile = "yolov3.weights"                  #weight파일 선언
@@ -117,6 +118,7 @@ if __name__ == '__main__':
     while cap.isOpened():                           #cap이 초기화가 잘 되어 있는지 확인
         
         ret, frame = cap.read()
+        ####
         frame = cv2.flip(frame, 1)
         #cap.read()는 재생되는 비디오의 한 프레임씩 읽는다.
         #제대로 읽었다면 ret값이 True가 되고, 실패하면 False.
@@ -157,15 +159,18 @@ if __name__ == '__main__':
             label_list = list()
 
             list(map(lambda x: write(x, orig_im), output))
-
-            if label_list.count('dog') >= 1:
+            ####
+            #if label_list.count('dog') >= 1:
+            if label_list.count('remote') >= 1:
                 dog_exist = 1
             else:
                 dog_exist = 0
 
             if dog_exist == 1:
-                print("개가 있어요!!")
-
+                print("///////////There is my Shiba Mouse///////////////")
+            else:
+                print("There isn't my Shiba Mouse")
+            ####
             cv2.imshow("frame", orig_im)
             key = cv2.waitKey(1)
             if key & 0xFF == ord('q'):
