@@ -10,17 +10,21 @@ import cv2
 import matplotlib.pyplot as plt
 from bbox import bbox_iou
 
+
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters())
 
+
 def count_learnable_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
 
 def convert2cpu(matrix):
     if matrix.is_cuda:
         return torch.FloatTensor(matrix.size()).copy_(matrix)
     else:
         return matrix
+
 
 def predict_transform(prediction, inp_dim, anchors, num_classes, CUDA = True):
     batch_size = prediction.size(0)
@@ -32,7 +36,6 @@ def predict_transform(prediction, inp_dim, anchors, num_classes, CUDA = True):
     anchors = [(a[0]/stride, a[1]/stride) for a in anchors]
 
 
-
     prediction = prediction.view(batch_size, bbox_attrs*num_anchors, grid_size*grid_size)
     prediction = prediction.transpose(1,2).contiguous()
     prediction = prediction.view(batch_size, grid_size*grid_size*num_anchors, bbox_attrs)
@@ -42,7 +45,6 @@ def predict_transform(prediction, inp_dim, anchors, num_classes, CUDA = True):
     prediction[:,:,0] = torch.sigmoid(prediction[:,:,0])
     prediction[:,:,1] = torch.sigmoid(prediction[:,:,1])
     prediction[:,:,4] = torch.sigmoid(prediction[:,:,4])
-    
 
     
     #Add the center offsets

@@ -28,7 +28,6 @@ def confidence_filter_cls(result, confidence):
     return result
 
 
-
 def get_abs_coord(box):
     box[2], box[3] = abs(box[2]), abs(box[3])
     x1 = (box[0] - box[2]/2) - 1 
@@ -38,7 +37,6 @@ def get_abs_coord(box):
     return x1, y1, x2, y2
     
 
-
 def sanity_fix(box):
     if (box[0] > box[2]):
         box[0], box[2] = box[2], box[0]
@@ -47,6 +45,7 @@ def sanity_fix(box):
         box[1], box[3] = box[3], box[1]
         
     return box
+
 
 def bbox_iou(box1, box2):
     """
@@ -96,8 +95,6 @@ def pred_corner_coord(prediction):
     prediction[ind_nz[0], ind_nz[1]] = box
     
     return prediction
-
-
 
 
 def write(x, batches, results, colors, classes):

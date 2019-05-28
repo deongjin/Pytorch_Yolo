@@ -11,6 +11,7 @@ from util import count_parameters as count
 from util import convert2cpu as cpu
 from util import predict_transform
 
+
 class test_net(nn.Module):
     def __init__(self, num_layers, input_size):
         super(test_net, self).__init__()
@@ -23,15 +24,6 @@ class test_net(nn.Module):
         x = x.view(-1)
         fwd = nn.Sequential(self.linear_1, *self.middle, self.output)
         return fwd(x)
-        
-def get_test_input():
-    img = cv2.imread("dog-cycle-car.png")
-    img = cv2.resize(img, (416,416)) 
-    img_ =  img[:,:,::-1].transpose((2,0,1))
-    img_ = img_[np.newaxis,:,:,:]/255.0
-    img_ = torch.from_numpy(img_).float()
-    img_ = Variable(img_)
-    return img_
 
 
 def parse_cfg(cfgfile):
@@ -66,7 +58,9 @@ def parse_cfg(cfgfile):
     return blocks
 #    print('\n\n'.join([repr(x) for x in blocks]))
 
+
 import pickle as pkl
+
 
 class MaxPoolStride1(nn.Module):
     def __init__(self, kernel_size):
@@ -98,8 +92,6 @@ class DetectionLayer(nn.Module):
         return prediction
         
 
-        
-
 
 class Upsample(nn.Module):
     def __init__(self, stride=2):
@@ -118,7 +110,8 @@ class Upsample(nn.Module):
         x = x.view(B, C, H, 1, W, 1).expand(B, C, H, stride, W, stride).contiguous().view(B, C, H*stride, W*stride)
         return x
 #       
-        
+
+
 class ReOrgLayer(nn.Module):
     def __init__(self, stride = 2):
         super(ReOrgLayer, self).__init__()

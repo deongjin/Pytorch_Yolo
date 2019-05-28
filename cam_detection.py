@@ -14,25 +14,11 @@ import argparse
 import pickle as pkl
 
 
-def get_test_input(input_dim, CUDA):
-    img = cv2.imread("imgs/messi.jpg")
-    img = cv2.resize(img, (input_dim, input_dim)) 
-    img_ =  img[:,:,::-1].transpose((2,0,1))
-    img_ = img_[np.newaxis,:,:,:]/255.0
-    img_ = torch.from_numpy(img_).float()
-    img_ = Variable(img_)
-    
-    if CUDA:
-        img_ = img_.cuda()
-    
-    return img_
-
-
 def prep_image(img, inp_dim):
     """
-    Prepare image for inputting to the neural network. 
-    
-    Returns a Variable 
+    Prepare image for inputting to the neural network.
+
+    Returns a Variable
     """
 
     orig_im = img
@@ -167,9 +153,7 @@ if __name__ == '__main__':
                 dog_exist = 0
 
             if dog_exist == 1:
-                print("///////////There is my Shiba Mouse///////////////")
-            else:
-                print("There isn't my Shiba Mouse")
+                print("Detect--------Detect--------Detect--------Detect--------Detect")
             ####
             cv2.imshow("frame", orig_im)
             key = cv2.waitKey(1)
