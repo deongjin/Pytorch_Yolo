@@ -385,7 +385,7 @@ class Darknet(nn.Module):
         # 2. Minor Version Number
         # 3. Subversion number 
         # 4. IMages seen 
-        header = np.fromfile(fp, dtype = np.int32, count = 5)
+        header = np.fromfile(fp, dtype=np.int32, count=5)
         self.header = torch.from_numpy(header)
         self.seen = self.header[3]
         
