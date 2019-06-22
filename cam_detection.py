@@ -104,6 +104,8 @@ if __name__ == '__main__':
     while cap.isOpened():                           #cap이 초기화가 잘 되어 있는지 확인
         
         ret, frame = cap.read()
+        origin_frame = frame
+
         ####
         frame = cv2.flip(frame, 1)
         #cap.read()는 재생되는 비디오의 한 프레임씩 읽는다.
@@ -154,8 +156,12 @@ if __name__ == '__main__':
 
             if dog_exist == 1:
                 print("Detect--------Detect--------Detect--------Detect--------Detect")
+                cv2.imwrite('remote.jpg', origin_frame)
+
             ####
+
             cv2.imshow("frame", orig_im)
+
             key = cv2.waitKey(1)
             if key & 0xFF == ord('q'):
                 break
