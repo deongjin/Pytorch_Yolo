@@ -92,8 +92,10 @@ if __name__ == '__main__':
     
     videofile = 'video.avi'                         #videofile이름
     
-    cap = cv2.VideoCapture(0)                       #videoCapture(0) >> video 캡쳐변수 선언
-    
+    #cap = cv2.VideoCapture(0)                       #videoCapture(0) >> video 캡쳐변수 선언
+    cap = cv2.VideoCapture("http://192.168.0.124:8409/?action=stream")
+    # videoCapture("주소") >> video 캡쳐변수 선언
+
     assert cap.isOpened(), 'Cannot capture source'
     #assert는 가정설정문, 뒤의 조건이 True가 아니면 AssertError를 발생시킨다.
     
