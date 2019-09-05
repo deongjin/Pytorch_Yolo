@@ -48,13 +48,12 @@ def write(x, img):
 def arg_parse():
     """
     Parse arguements to the detect module
-    
-    """
 
-    parser = argparse.ArgumentParser(description='YOLO v3 Cam Demo')
+    """
+    parser = argparse.ArgumentParser(description='YOLO v3 Cam')
     parser.add_argument("--confidence", dest = "confidence", help = "Object Confidence to filter predictions", default = 0.25)
     parser.add_argument("--nms_thresh", dest = "nms_thresh", help = "NMS Threshhold", default = 0.4)
-    parser.add_argument("--reso", dest = 'reso', help = 
+    parser.add_argument("--reso", dest = 'reso', help =
                         "Input resolution of the network. Increase to increase accuracy. Decrease to increase speed",
                         default = "160", type = str)
     return parser.parse_args()
@@ -93,7 +92,7 @@ if __name__ == '__main__':
     videofile = 'video.avi'                         #videofile이름
     
     #cap = cv2.VideoCapture(0)                       #videoCapture(0) >> video 캡쳐변수 선언
-    cap = cv2.VideoCapture("http://192.168.0.124:8409/?action=stream")
+    cap = cv2.VideoCapture("http://192.168.0.54:8409/?action=stream")
     # videoCapture("주소") >> video 캡쳐변수 선언
 
     assert cap.isOpened(), 'Cannot capture source'
@@ -112,7 +111,7 @@ if __name__ == '__main__':
         frame = cv2.flip(frame, 1)
         #cap.read()는 재생되는 비디오의 한 프레임씩 읽는다.
         #제대로 읽었다면 ret값이 True가 되고, 실패하면 False.
-        #읽은 프레임은 frame이다.
+        #읽은 프레임은 frame에 입력이 된다.
 
         if ret:                                     #ret이 true라면, 제대로 읽었다면
             
@@ -158,7 +157,7 @@ if __name__ == '__main__':
 
             if dog_exist == 1:
                 print("Detect--------Detect--------Detect--------Detect--------Detect")
-                cv2.imwrite('remote.jpg', origin_frame)
+                cv2.imwrite('detect.jpg', origin_frame)
 
             ####
 
