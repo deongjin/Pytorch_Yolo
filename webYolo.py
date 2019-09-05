@@ -43,7 +43,6 @@ class PytorchYolo:
         img_ = torch.from_numpy(img_).float().div(255.0).unsqueeze(0)
         return img_, orig_im, dim
 
-
     def write(self, x, img):
 
         c1 = tuple(x[1:3].int())
@@ -59,7 +58,6 @@ class PytorchYolo:
         cv2.putText(img, label, (c1[0], c1[1] + t_size[1] + 4), cv2.FONT_HERSHEY_PLAIN, 1, [225, 255, 255], 1);
         return img
 
-
     def arg_parse(self):
         """
         Parse arguements to the detect module
@@ -73,9 +71,7 @@ class PytorchYolo:
                             default="160", type=str)
         return parser.parse_args()
 
-
-
-    def yolo(self):
+    def yolov3(self):
         cfgfile = "cfg/yolov3.cfg"  # config파일 선언
         weightsfile = "yolov3.weights"  # weight파일 선언
         num_classes = 80  # class개수 정의
@@ -156,13 +152,6 @@ class PytorchYolo:
                 self.colors = pkl.load(open("pallete", "rb"))
 
                 list(map(lambda x: self.write(x, orig_im), output))
-                ####
-                if self.label_list.count(self.detect_object) >= 1:
-                    print("Detect--------Detect--------Detect--------Detect--------Detect")
-                    cv2.imwrite('detect.jpg', origin_frame)
-                else:
-                    cv2.imwrite('detect.jpg', origin_frame)
-                ####
 
                 cv2.imshow("frame", orig_im)
 
@@ -171,11 +160,18 @@ class PytorchYolo:
                     break
                 print("Time = {:5.2f}[sec]".format(time.time() - start))
 
+                ####
+                if self.label_list.count(self.detect_object) >= 1:
+                    return True
+                else:
+                    return False
+                ####
+
             else:
                 break
 
 
 if __name__ == '__main__':
-    detect = pytorch_yolo("http://192.168.0.54:8409/?action=snapshot", "person")
-    for i in range(0,4):
-        detect.yolo()
+    detect = PytorchYolo("http://192.168.0.54:8409/?action=snapshot", "dog")
+    for i in range(0, 4):
+        print(detect.yolov3())

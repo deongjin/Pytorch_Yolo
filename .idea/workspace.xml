@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/yolo.py" line="101" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/webYolo.py" line="97" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67e5cd3c-815e-4025-85e4-19d232dfec2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/imag_detect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yolo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cam_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/cam_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detect.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/detect.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/webYolo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,12 +20,16 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/yolo.py">
+        <entry file="file://$PROJECT_DIR$/webYolo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="171" column="42" selection-start-line="171" selection-start-column="42" selection-end-line="171" selection-end-column="42" />
+            <state relative-caret-position="531">
+              <caret line="176" column="30" lean-forward="true" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#347#702#0" />
+                <element signature="e#934#1488#0" />
+                <element signature="e#1279#1840#0" />
+                <element signature="e#2319#5770#0" />
               </folding>
             </state>
           </provider>
@@ -86,6 +86,7 @@
         <option value="$PROJECT_DIR$/cam_detection.py" />
         <option value="$PROJECT_DIR$/preprocess.py" />
         <option value="$PROJECT_DIR$/yolo.py" />
+        <option value="$PROJECT_DIR$/webYolo.py" />
       </list>
     </option>
   </component>
@@ -184,7 +185,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Git\Pytorch_Yolo\yolo.py" />
+      <option name="SCRIPT_NAME" value="D:\Git\Pytorch_Yolo\webYolo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -226,7 +227,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yolo.py" />
+      <option name="SCRIPT_NAME" value="D:\Git\Pytorch_Yolo\webYolo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,12 +263,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49876544" visible="true" weight="0.15247525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49876544" visible="true" weight="0.15247525" />
       <window_info id="Structure" order="1" sideWeight="0.5012346" side_tool="true" weight="0.17755775" />
       <window_info id="Favorites" order="2" sideWeight="0.5012346" side_tool="true" weight="0.17755775" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26197183" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34507042" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -412,12 +413,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yolo.py">
+    <entry file="file://$PROJECT_DIR$/webYolo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="171" column="42" selection-start-line="171" selection-start-column="42" selection-end-line="171" selection-end-column="42" />
+        <state relative-caret-position="531">
+          <caret line="176" column="30" lean-forward="true" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#347#702#0" />
+            <element signature="e#934#1488#0" />
+            <element signature="e#1279#1840#0" />
+            <element signature="e#2319#5770#0" />
           </folding>
         </state>
       </provider>
