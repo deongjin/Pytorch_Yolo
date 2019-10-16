@@ -92,7 +92,7 @@ if __name__ == '__main__':
     videofile = 'video.avi'                         #videofile이름
     
     #cap = cv2.VideoCapture(0)                       #videoCapture(0) >> video 캡쳐변수 선언
-    cap = cv2.VideoCapture("http://192.168.0.54:8409/?action=stream")
+    cap = cv2.VideoCapture(0)
     # videoCapture("주소") >> video 캡쳐변수 선언
 
     assert cap.isOpened(), 'Cannot capture source'
@@ -148,9 +148,8 @@ if __name__ == '__main__':
             label_list = list()
 
             list(map(lambda x: write(x, orig_im), output))
-            ####
-            #if label_list.count('dog') >= 1:
-            if label_list.count('remote') >= 1:
+
+            if label_list.count('dog') >= 1:
                 dog_exist = 1
             else:
                 dog_exist = 0

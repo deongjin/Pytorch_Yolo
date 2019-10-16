@@ -26,6 +26,8 @@ class PytorchYolo:
         self.web_address = web_address
         self.detect_object = detect_object
 
+        print("Pytorch is Ready!")
+
     def __del__(self):
         print("")
 
@@ -48,7 +50,7 @@ class PytorchYolo:
         c1 = tuple(x[1:3].int())
         c2 = tuple(x[3:5].int())
         cls = int(x[-1])
-        label = "{0}".format(self.classes[cls])
+        label = "{0}".format(str(self.classes[cls]))            #내가 str 넣음
         self.label_list.append(label)
         color = random.choice(self.colors)
         cv2.rectangle(img, c1, c2, color, 1)
@@ -136,7 +138,7 @@ class PytorchYolo:
 
                 if type(output) == int:
                     print("Time = {:5.2f}[sec]".format(time.time() - start))
-                    cv2.imshow("frame", orig_im)
+                    #cv2.imshow("frame", orig_im)
                     key = cv2.waitKey(1)
                     if key & 0xFF == ord('q'):
                         break
@@ -153,7 +155,7 @@ class PytorchYolo:
 
                 list(map(lambda x: self.write(x, orig_im), output))
 
-                cv2.imshow("frame", orig_im)
+                #cv2.imshow("frame", orig_im)
 
                 key = cv2.waitKey(1)
                 if key & 0xFF == ord('q'):
@@ -162,9 +164,13 @@ class PytorchYolo:
 
                 ####
                 if self.label_list.count(self.detect_object) >= 1:
-                    return True
+                    print(">> "+self.detect_object+" is detected")
+                    del self.label_list[:]  # 리스트를 초기화 해줍니다
+                    return "y"
                 else:
-                    return False
+                    print(">> "+self.detect_object+" is not detected")
+                    del self.label_list[:]  # 리스트를 초기화 해줍니다
+                    return "n"
                 ####
 
             else:
@@ -173,5 +179,6 @@ class PytorchYolo:
 
 if __name__ == '__main__':
     detect = PytorchYolo("http://192.168.0.54:8409/?action=snapshot", "dog")
-    for i in range(0, 4):
-        print(detect.yolov3())
+    #detect = PytorchYolo(0, "dog")
+    for i in range(0, 10):
+        print(str(i+1) + " : " + detect.yolov3())
