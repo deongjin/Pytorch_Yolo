@@ -69,11 +69,11 @@ if __name__ == '__main__':
     args = arg_parse()                              #argparse를 이용해 명령행을 파싱해오도록 함수 실행
     confidence = float(args.confidence)             #confidence 변수에 --confidence값을 할당
     nms_thesh = float(args.nms_thresh)              #이것도 --nms_thresh값 할당
-    start = 0                                       #start는 0
+    start = 0
     CUDA = torch.cuda.is_available()                #cuda가 사용가능한 상황인지
 
-    num_classes = 80                                #암튼 80
-    bbox_attrs = 5 + num_classes                    #Bouding Box 속성
+    num_classes = 80
+    bbox_attrs = 5 + num_classes
     
     model = Darknet(cfgfile)                        #Darknet
     model.load_weights(weightsfile)                 #Model에 weighs파일을 load해준다
@@ -87,19 +87,17 @@ if __name__ == '__main__':
     if CUDA:
         model.cuda()                                #Cuda를 사용중이면 model.cuda()
             
-    model.eval()                                    #모델 평가?
+    model.eval()
     
-    videofile = 'video.avi'                         #videofile이름
+    videofile = 'video.avi'
     
     #cap = cv2.VideoCapture(0)                       #videoCapture(0) >> video 캡쳐변수 선언
     cap = cv2.VideoCapture(0)
-    # videoCapture("주소") >> video 캡쳐변수 선언
 
     assert cap.isOpened(), 'Cannot capture source'
     #assert는 가정설정문, 뒤의 조건이 True가 아니면 AssertError를 발생시킨다.
     
     frames = 0
-    #frame 변수 선언, 초기값은 0
 
     start = time.time()                             #시간을 측정해주는 함수
     while cap.isOpened():                           #cap이 초기화가 잘 되어 있는지 확인
@@ -149,14 +147,14 @@ if __name__ == '__main__':
 
             list(map(lambda x: write(x, orig_im), output))
 
-            if label_list.count('dog') >= 1:
+            if label_list.count('dog') >= 1:       #라벨이름들을 배열에 담에 만약 강아지가 안에 있다면 동작하도록 한다
                 dog_exist = 1
             else:
                 dog_exist = 0
 
             if dog_exist == 1:
                 print("Detect--------Detect--------Detect--------Detect--------Detect")
-                cv2.imwrite('detect.jpg', origin_frame)
+                cv2.imwrite('detect.jpg', origin_frame)  #사진 저장
 
             ####
 
@@ -166,7 +164,7 @@ if __name__ == '__main__':
             if key & 0xFF == ord('q'):
                 break
             frames += 1
-            print("FPS of the video is {:5.2f}".format(frames / (time.time() - start)))
+            print("FPS of the video is {:5.2f}".format(frames / (time.time() - start)))  #fps 출력
 
         else:
             break

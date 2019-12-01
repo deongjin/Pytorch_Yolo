@@ -50,7 +50,7 @@ class PytorchYolo:
         c1 = tuple(x[1:3].int())
         c2 = tuple(x[3:5].int())
         cls = int(x[-1])
-        label = "{0}".format(str(self.classes[cls]))            #내가 str 넣음
+        label = "{0}".format(str(self.classes[cls]))            #str을 통해 변수 크기 확장
         self.label_list.append(label)
         color = random.choice(self.colors)
         cv2.rectangle(img, c1, c2, color, 1)
@@ -80,7 +80,7 @@ class PytorchYolo:
 
         args = self.arg_parse()  # argparse를 이용해 명령행을 파싱해오도록 함수 실행
         confidence = float(args.confidence)  # confidence 변수에 --confidence값을 할당
-        nms_thesh = float(args.nms_thresh)  # 이것도 --nms_thresh값 할당
+        nms_thesh = float(args.nms_thresh)
         start = 0  # start는 0
         CUDA = torch.cuda.is_available()  # cuda가 사용가능한 상황인지
 
